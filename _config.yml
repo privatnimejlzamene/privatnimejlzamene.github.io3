@@ -28,8 +28,6 @@ paginate: 3
 
 google_analytics_tracking_id: xxx # your GA ID
 
-twitter:
-  username: mjohnq3
 
 # Octopress settings
 # extensions for new posts and pages
