@@ -1,0 +1,67 @@
+// Box sizing
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// Clearfix
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+// Responsive images
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+// Text optimization
+body {
+  // only optimize text for headers due to performance issues
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-kerning: auto;
+  -moz-font-kerning: auto;
+  font-kerning: auto;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, caption {
+  font-weight: normal;
+  // just left it in the headers. Was making font less legible elsewhere
+  text-rendering: optimizeLegibility;
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal;
+  -webkit-font-feature-settings: "liga", "kern";
+  -moz-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+}
+
+// Retina device optimization
+// slight character and word gap of retina devices to make the text more legible
+@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  p, li {
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+  }
+}
+
+// Accessibly hidden elements
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

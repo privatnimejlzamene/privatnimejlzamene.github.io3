@@ -1,0 +1,37 @@
+name: Jekyll Scafold
+description: Sample Jekyll blogging site
+author: mjohnq3
+title: Jekyll Scaffold
+
+url: mjohnq3.github.io
+baseurl: /jekyll-scaffold
+
+gems:
+  - jekyll-sitemap
+  - octopress-image-tag
+
+sass:
+  sass_dir: _sass
+  style: :expanded
+
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+
+permalink: /blog/:year/:month/:day/:title/
+highlighter: rouge
+
+paginate: 3
+
+google_analytics_tracking_id: xxx # your GA ID
+
+twitter:
+  username: mjohnq3
+
+# Octopress settings
+# extensions for new posts and pages
+post_ext: md
+page_ext: md

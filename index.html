@@ -1,0 +1,43 @@
+---
+layout: default
+title: "Blog"
+description: Simple Jekyll blogging site - main page
+---
+<div class="blog-page">
+<h1 class="page-title">{{ page.title }}</h1>
+{% for post in paginator.posts %}
+<article class="posts">
+  <header>
+    <h1><a class="post-link"
+           href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h1>
+    <time datetime="{{ post.date | datetime | date_to_xmlschema }}"
+      >{{ post.date | date: "%b %-d, %Y" }}
+    </time>
+
+  </header>
+  {{ post.content }}
+
+</article>
+{% endfor %}
+
+<div>
+  <ul class="pagination">
+    {% if paginator.next_page %}
+    <li><a class="next" href="{{ site.baseurl }}/page{{ paginator.next_page }}">&laquo;&nbsp;Older</a></li>
+    {% else %}
+    <li><span class="disabled">&laquo;&nbsp;Older</span></li>
+    {% endif %}
+    <a href="{{ site.baseurl }}/archives">Archives</a>
+    {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <li><a class="prev" href="{{ site.baseurl }}/">Newer&nbsp;&raquo;</a></li>
+    {% else %}
+    <li><a class="prev" href="{{ site.baseurl }}/page{{ paginator.previous_page }}">Newer&nbsp;&raquo;</a></li>
+    {% endif %}
+    {% else %}
+    <li><span class="disabled">Newer&nbsp;&raquo;</span></li>
+    {% endif %}
+  </ul>
+</div>
+</div>

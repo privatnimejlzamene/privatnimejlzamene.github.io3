@@ -1,0 +1,510 @@
+---
+
+---
+// Imports
+@import "normalize";
+@import "settings";
+@import "defaults";
+@import "flex";
+@import "friendly-syntax";
+@import "print";
+
+
+// Main CSS
+html {
+  font-size: 100%;
+  line-height: $base-line-height;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: 1.25em;
+  @media screen and (min-width: $medium) {
+    font-size: 1.325em;
+  }
+  @media screen and (min-width: $large) {
+    font-size: 1.45em;
+  }
+
+  font-weight: 400;
+  color: $body-font-color;
+  background-color: $body-bg;
+  margin: 0 auto;
+  max-width: 720px;
+  width: 96%;
+
+  p {
+    margin: 0 0 1.5em;
+  }
+}
+
+
+// Headings
+h1, h2, h3, h4, h5, h6,
+.copyright,
+.navigation,
+.pagination {
+  font-family: $header-font-family;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: $header-line-height;
+  margin-bottom: .5em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.50em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+h4 {
+  font-size: 0.844em;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 0.844em;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+
+// Site title
+h1.title {
+  background: transparent url(images/Writer-36-logo.png) no-repeat left;
+  margin: 8px 0 0;
+  padding-left: 50px;
+
+  @media screen and (min-width: $medium) {
+    background: transparent url(images/Writer-50-logo.png) no-repeat left;
+    margin-bottom: 10px;
+    padding-left: 70px;
+  }
+
+  a {
+    color: $site-title-color;
+    text-decoration: none;
+  }
+}
+
+
+// Code formatting
+pre,
+code {
+  font-family: $code-font-family;
+  font-size: 1em;
+  border: 1px solid $border-color;
+  background-color: $code-background-color;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+// Content
+.footer-container,
+.header-container,
+.main-container {
+  background-color: $body-bg;
+}
+
+.header-container {
+  border-bottom: none;
+}
+
+h1.page-title {
+  color: $page-title-color;
+  margin-top: .125em;
+}
+
+article h1 {
+  color: $article-title-color;
+  margin-top: .125em;
+}
+
+article h2 {
+  margin-top: .3em;
+}
+
+.blog-archives {
+  padding-bottom: 30px;
+
+  article {
+    margin-bottom: 1em;
+  }
+}
+
+article.archive {
+  padding-left: 1em;
+  @media screen and (min-width: $large) {
+    padding-left: 2em;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  time {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+}
+
+article.posts {
+  time {
+    display: inline-block;
+    margin-bottom: .6em;
+    text-transform: uppercase;
+  }
+}
+
+.content,
+.footer {
+  a {
+    padding: .5em 0;
+  }
+}
+
+.content {
+  a {
+    font-style: italic;
+  }
+}
+
+.post-image {
+  border: 1px solid $border-color;
+  padding: 10px;
+}
+
+
+// Scroll to top
+.scroll-top {
+  display: none;
+}
+
+
+// Links
+a {
+  &:link,
+  &:visited {
+    color: $content-link-color;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:hover {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+}
+
+a {
+  &.post-link {
+    padding: .25em 0;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  &:link.post-link,
+  &:visited.post-link {
+    color: $link-color;
+  }
+
+  &:focus.post-link,
+  &:hover.post-link {
+    color: $hover-color;
+  }
+
+  &:active.post-link {
+    color: $active-color;
+  }
+}
+
+.navigation {
+  font-size: 1.15em;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+
+  @include flexbox;
+  @include flex-direction();
+  @include justify-content(center);
+  @media screen and (min-width: $small) {
+    @include justify-content(space-between);
+    font-size: 1.25em;
+  }
+  @media screen and (min-width: $large) {
+    @include justify-content(space-around);
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    padding: .6em .6em;
+
+    @media screen and (min-width: $small) {
+      padding: .6em 1em;
+    }
+
+    @media screen and (min-width: $large) {
+      padding: .6em 1.5em;
+    }
+
+    &:link,
+    &:visited {
+      color: $link-color;
+    }
+
+    &:focus,
+    &:hover {
+      color: $hover-color;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+
+    &.active {
+      color: $nav-link-active;
+      text-shadow: $nav-link-active-shad;
+    }
+  }
+}
+
+.blog-page .posts {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 2.5em;
+  padding-bottom: 0;
+}
+
+.page-url {
+  @include flexbox;
+  @include flex-direction();
+  @include justify-content(space-between);
+  font-size: 1em;
+  margin: 0;
+  padding: .5em 0;
+
+  a.prev {
+    padding-right: .4em;
+  }
+
+  a.next {
+    padding-left: .4em;
+    text-align: right;
+  }
+
+  .disabled {
+    color: transparent;
+  }
+}
+
+.pagination {
+  font-size: 1.125em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include flexbox;
+  @include flex-direction();
+  @include justify-content(space-between);
+
+  li span.disabled {
+    color: transparent;
+    display: block;
+    padding: .6em 0;
+    text-decoration: none;
+  }
+
+  a {
+    display: block;
+    font-style: normal;
+    padding: .6em 1em;
+    text-decoration: none;
+
+    &.next {
+      padding-left: 0;
+    }
+
+    &.prev {
+      padding-right: 0;
+    }
+
+    &:link,
+    &:visited {
+      color: $link-color;
+    }
+
+    &:focus,
+    &:hover {
+      color: $hover-color;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+  }
+}
+
+
+// Aside - below content
+aside {
+  border-top: $border-color solid 1px;
+  font-family: $header-font-family;
+  font-size: 1em;
+  font-weight: 500;
+  padding-bottom: 10px;
+
+  h2 {
+    color: $aside-title-color;
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 10px;
+    margin-top: -10px;
+    padding-left: 0;
+  }
+
+  li {
+    font-family: $header-font-family;
+    font-size: 1.125em;
+    font-weight: 500;
+  }
+
+  a {
+    display: block;
+    padding: .5em 0;
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: $link-color;
+    }
+
+    &:focus,
+    &:hover {
+      color: $hover-color;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+  }
+}
+
+
+// Footer
+.footer {
+  border-top: $border-color solid 1px;
+  margin-top: 16px;
+  padding: 16px 0;
+  text-align: center;
+
+  p.copyright {
+    margin-bottom: .6em;
+  }
+
+  p.license {
+    margin-bottom: 0;
+  }
+
+  .rss-subscribe {
+    margin-left: 26px;
+  }
+}
+
+
+
+// Media Queries
+@media screen and (min-width: $small) {
+
+}
+
+@media screen and (min-width: $large) {
+  h1.page-title,
+  article h1 {
+    margin-top: .5em;
+  }
+
+  .header {
+    margin-top: 16px;
+  }
+
+  .navigation {
+    margin-bottom: 24px;
+  }
+
+
+  // Scroll to top
+  .scroll-top {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 9999999;
+
+    a {
+      font-size: 24px;
+      background-color: $stt-background-color;
+      border: thin dotted $stt-border-color;
+      border-radius: 6px;
+      color: $stt-target-color;
+      padding: 8px 14px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $stt-hover-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer {
+    border-top: none;
+
+    p {
+      font-size: .84em;
+
+      &.copyright {
+        font-size: 1em;
+      }
+
+      &.meta {
+        font-size: 1em;
+      }
+    }
+  }
+
+  aside .column-1,
+  aside .column-2 {
+    float: left;
+    padding: 0 10px;
+    width: 50%;
+  }
+}

@@ -1,0 +1,19 @@
+<nav class="nav-collapse" role="navigation">
+  <ul class="navigation">
+    <li><a{% if page.url == '/index.html' %} class="active"{% endif %}
+      href="{{ site.baseurl }}/">Blog</a></li>
+
+    <li><a{% if page.url == '/archives/index.html' %} class="active"{% endif %}
+      href="{{ site.baseurl }}/archives">Archives</a></li>
+
+    <li><a{% if page.url == '/about/index.html' %} class="active"{% endif %}
+      href="{{ site.baseurl }}/about">About</a></li>
+
+    <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></li>
+  </ul>
+</nav>
+
+<header class="header" role="banner">
+  <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+
+</header>

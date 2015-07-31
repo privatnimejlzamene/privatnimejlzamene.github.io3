@@ -1,0 +1,56 @@
+// Fonts
+$base-font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
+       Baskerville, Georgia, "Book Antiqua", Garamond, "Bookman Old Style",
+      "Bitstream Charter", "Nimbus Roman No9 L", "Apple Garamond",
+      "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
+      "Century Schoolbook L", serif;
+$base-font-size:   100%;
+$base-line-height: 1.5;
+
+$code-font-family: "Consolas", "Menlo", "Courier New", monospace;
+
+$header-font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+        Verdana, "Verdana Ref", "DejaVu Sans", "Bitstream Vera Sans",
+        "Liberation Sans",  sans-serif;
+$header-line-height: 1.2;
+
+
+// Colors
+// body colors
+$body-bg: #f7f7f7 !default;
+$primary-color: #404040 !default;
+$secondary-color: #505050 !default;
+$border-color: #d8d8d8;
+$border-bottom-color: #d3d3d3;
+$code-background-color: #fefefe;
+
+
+// font colors
+$body-font-color: #292929 !default;
+$article-title-color: $secondary-color;
+$site-title-color: #636363;
+$page-title-color: $site-title-color;
+$aside-title-color: $site-title-color;
+$quote-color: #aaaaaa;
+
+
+// link colors
+$link-color: $secondary-color;
+$content-link-color: $link-color;
+$hover-color: lighten($link-color, 25%);
+$active-color: #ff0000;
+
+$nav-link-active: $secondary-color;
+$nav-link-active-shad: lighten($nav-link-active, 25%) 1px 1px;
+
+// scroll to top
+$stt-target-color: rgba(#292929, 0.8);
+$stt-background-color: rgba(#dcdcdc, 0.3);
+$stt-border-color: rgba(#dcdcdc, 0.8);
+$stt-hover-color: rgba(#dcdcdc, 0.6);
+
+
+// breakpoints
+$small: 29em;  // 464px
+$medium: 36em; // 576px
+$large: 45em;  // 720px

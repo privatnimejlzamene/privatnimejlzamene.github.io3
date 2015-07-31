@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+<body>
+
+<div class="header-container">{% include header.html %}</div>
+
+<div class="main-container">
+  <main class="clearfix">
+
+    <div class="content">{{ content }}</div>
+
+    <!-- columns below content -->
+    {% include aside.html %}
+
+  </main>
+
+</div><!-- main-container -->
+
+<div class="footer-container">{% include footer.html %}</div>
+
+{% include after_footer.html %}
+</body>
+</html>
